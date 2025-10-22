@@ -57,3 +57,17 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+-- Cómo usar
+
+Desarrollo (hot-reload):
+
+-- docker build -t myapp:dev --target dev .
+-- docker run --rm -it -p 4200:4200 -v "$PWD":/app myapp:dev
+
+(monta el código para cambios en vivo)
+
+Producción (build estático + NGINX):
+
+-- docker build -t myapp:prod --target prod --build-arg APP_NAME=<tu-proyecto> .
+-- docker run --rm -p 8080:80 myapp:prod

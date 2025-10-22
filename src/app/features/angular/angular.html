@@ -1,0 +1,8 @@
+<div>
+  <button (click)="onClick()">Hola desde Angular</button>
+
+  <div *ngIf="showList">
+    <div *ngFor="let name of list">{{ name }}</div>
+    <app-component (emitData)="func($event)" />
+  </div>
+</div>
